@@ -1,0 +1,50 @@
+{# spaceless #}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>{{ pagetitle }}</title>
+    <!-- Bootstrap -->
+    <link type="text/css" href="{{ base_url() }}assets/css/bootstrap.min.css" rel="stylesheet"> 
+    <link type="text/css" href="{{ base_url() }}assets/css/font-awesome.min.css" rel="stylesheet">
+	<link type="text/css" href="{{ base_url() }}assets/css/animate.css" rel="stylesheet">
+	<link type="text/css" href="{{ base_url() }}assets/css/main.css" rel="stylesheet">
+	<!-- Bootstrap Material Design -->
+	<link href="{{ base_url() }}assets/css/bootstrap-material-design.min.css" rel="stylesheet">
+	<link href="{{ base_url() }}assets/css/ripples.min.css" rel="stylesheet">
+	{% block css_loads %}{% endblock %}
+  </head>
+  <body>
+	<!-- header -->
+    {% block header_content %}{% include './template/template_header.html' %}{% endblock %}
+	<!-- end header -->
+	
+	<!--content-->
+	{% block page_content %}{% endblock %}
+	<!--end content-->
+	
+	<!-- footer -->
+	{% block footer_content %}{% include './template/template_footer.html' %}{% endblock %}
+	<!-- end footer -->
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ base_url() }}assets/js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ base_url() }}assets/js/bootstrap.min.js"></script>
+	<script src="{{ base_url() }}assets/js/wow.min.js"></script>
+	<script>
+		new WOW().init();
+	</script>
+	<!-- Material Design for Bootstrap -->
+	<script src="{{ base_url() }}assets/js/material.min.js"></script>
+	<script src="{{ base_url() }}assets/js/ripples.min.js"></script>
+	<script>
+		$.material.init();
+	</script>
+	{% block js_load %}{% endblock %}
+  </body>
+</html>
+{# endspaceless #}
